@@ -23,7 +23,7 @@
 		</c:forEach>
 	</table>
 	<a href="newRoomStudent.do">Add New Room</a>
-	<a href="redirect:getLevelByStudent.do">Back to Level</a>
+	<a href="getLevelByStudent.do">Back to Level</a>
 
 </body>
 </html>
