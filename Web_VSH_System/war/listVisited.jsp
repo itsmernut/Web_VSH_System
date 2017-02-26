@@ -28,6 +28,7 @@
 		%>				
 					<tr>
 					<td><%=visit.isVisited() %></td>
+					<td><%=stu.getClassroom()%></td>
 					<td><%=stu.getFirstName()%></td>
 					<td><%=stu.getLastName()%></td>
 					<td><%=visit.getDate() %></td>
