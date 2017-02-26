@@ -13,7 +13,6 @@
 	<table border="1">
 		<c:forEach items="${roomList}" var="room">
 			<tr>
-				
 				<td>${room.room}</td>
 				
 				<td><a href="editRoomStudent.do?id=${room.keyString}">Edit</a></td>
@@ -24,7 +23,7 @@
 		</c:forEach>
 	</table>
 	<a href="newRoomStudent.do">Add New Room</a>
-	<a href="listLevel.do">Back to Level</a>
+	<a href="redirect:getLevelByStudent.do">Back to Level</a>
 
 </body>
 </html>
