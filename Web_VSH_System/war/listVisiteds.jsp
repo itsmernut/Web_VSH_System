@@ -14,6 +14,7 @@
 		<c:forEach items="${AllStudentWithVisited}" var="checkedStudent">
 			<tr>
 				<td>${checkedStudent.visited.visited}</td>
+				<td>${checkedStudent.student.classroom}</td>
 				<td>${checkedStudent.student.firstName}</td>
 				<td>${checkedStudent.student.lastName}</td>
 				<td>${checkedStudent.visited.date}</td>
