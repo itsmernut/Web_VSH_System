@@ -24,7 +24,7 @@
 		</c:forEach>
 	</table>
 	<a href="newLevelTeacher.do">Add New Level</a>
-	<a href="listManage.do">Back to Manage</a>
+	<a href="listUser.do">Back to Manage</a>
 
 </body>
 </html>
