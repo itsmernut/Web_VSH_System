@@ -9,7 +9,6 @@ import javax.persistence.Query;
 
 import com.google.appengine.api.datastore.KeyFactory;
 import com.mfu.entity.Level_Information;
-import com.mfu.entity.Room_Information;
 
 public class Level_DAO {
 

@@ -1,0 +1,156 @@
+#profile{
+    background: #000;
+    padding-top: 10px;
+    padding-bottom : 20px;
+    font-size: 20px;
+    color : #fff;
+}
+#img_p{
+     display: block;
+  width: 100px;
+  height: 100px;
+  margin: 1em auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 3px solid #eee;
+}
+
+#img_p2{
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 1em auto;
+  clear : right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 3px solid #AEAEAE;
+}
+#img_p3{
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #AEAEAE;
+}
+#img_p4{
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 1em auto;
+  clear : right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-border-radius: 99em;
+  -moz-border-radius: 99em;
+  border-radius: 99em;
+  border: 3px solid #AEAEAE;
+  margin-top:40px;
+}
+#img_p5{
+  width: 300px;
+  height: 300px;
+  border: 3px solid #AEAEAE;
+  margin-right:10px;
+  margin-left:10px;
+}
+#map_p{
+    margin: auto;
+    width: 90%;
+    border: 2px solid #DEDEDE;
+}
+#map_img{
+    width : 100%;
+    margin: auto;
+}
+
+#logo{
+    margin-top:-6px;
+}
+
+
+#delete{
+  margin-right:15px;
+  float : right;
+}
+
+#edit{
+  
+  margin-right:15px;
+  float : right;
+}
+#check{
+  float: right;
+  margin-right: 18px;
+  margin-top: -10px;
+}
+  
+  .fix-nav {
+    /* this make our menu fixed top */    
+    z-index: 9999;
+    
+    position: fixed;
+    
+    left: 0;
+    width : 100%;
+    top: 0;
+
+  }
+  
+  .fix-body {
+    /* this will adjust body top margin to prevent content jumping when nav gets fix  */    
+    margin-top: 0px;
+  }
+  .content {
+    width: 80%;
+    margin: 25px auto;
+  }
+
+.information{
+  margin:auto;
+
+}
+.T0{
+  text-align:center
+} 
+.colum1{
+ margin :auto;
+  width:80%
+}
+#bt{
+  margin-top:25px;
+}
+#bt_submit{
+  margin:15px;
+}
+
+.M{
+  background-color: #01B85B;
+    border: none;
+    color: white;
+    padding: 20px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    border-radius: 8px;
+    margin:auto;
+
+}
+.M:hover{
+  background-color: #017E3F;
+    border: none;
+    color: white;
+
+}
+.mm{
+  width :50%;
+  float : leftว
+}
