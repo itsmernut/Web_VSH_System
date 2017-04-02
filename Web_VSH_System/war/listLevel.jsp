@@ -12,13 +12,14 @@
 	<table border="1">
 		<c:forEach items="${levelList}" var="level">
 			<tr>
+				
 				<td>${level.level}</td>
-				<td><a href="deleteLevel.do?id=${level.keyString}">Remove</a></td>
-				<td><a href="listRoomByLevel.do?id=${level.keyString}">View Room</a></td>
+				<td><a href="deleteLevelStudent.do?id=${level.keyString}">Remove</a></td>
+				<td><a href="getRoombyLevelStudent.do?id=${level.keyString}">view Room</a></td>
+			
 			</tr>
 		</c:forEach>
 	</table>
 	<a href="newlevel.do">Add New Room</a>
-	<a href="listLevel.do">Back to Level</a>
 </body>
 </html>

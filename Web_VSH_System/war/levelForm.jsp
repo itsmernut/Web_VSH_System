@@ -11,7 +11,7 @@
 <body>
 
 	<form:form method="post" action="saveLevel.do" commandName="level">
-		<form:hidden path="key" /><br />
+		<input type="hidden" name="keyString" value="${keyString }"><br />
 
 		Level: <form:input path="level" /><br />
 
