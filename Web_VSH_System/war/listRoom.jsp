@@ -18,6 +18,7 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="newRoom.do">Add New Room</a>
+	<a href="newRoom.do">Add New Room</a><br>
+	<a href="listLevel.do">Back to Level</a>
 </body>
 </html>
