@@ -16,20 +16,20 @@ import com.mfu.entity.Room_Information;
 @Controller
 public class Room_Controller {
 
-	@RequestMapping("/listRoom")
-	public ModelAndView listRoom(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listRoom.jsp");
-		List<Room_Information> roomList;
-		Room_DAO roomServ = new Room_DAO();
-		try {
-			roomList = roomServ.getAllRooms();
-			mv.addObject("roomList", roomList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		roomServ.closeEntityManager();
-		return mv;
-	}
+//	@RequestMapping("/listRoom")
+//	public ModelAndView listRoom(HttpServletRequest request) {
+//		ModelAndView mv = new ModelAndView("listRoom.jsp");
+//		List<Room_Information> roomList;
+//		Room_DAO roomServ = new Room_DAO();
+//		try {
+//			roomList = roomServ.getAllRooms();
+//			mv.addObject("roomList", roomList);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		roomServ.closeEntityManager();
+//		return mv;
+//	}
 	//when you add new room student
 	@RequestMapping("/newRoom")
 	public ModelAndView newRoom() {
@@ -56,7 +56,7 @@ public class Room_Controller {
 			e.printStackTrace();
 		}
 		roomServ.closeEntityManager();
-		return "redirect:listRoomByLevel.do?id="+levelKey;
+		return "redirect:listRoom.do?id="+levelKey;
 	}
 	
 	//when you update room student
@@ -84,16 +84,16 @@ public class Room_Controller {
 		Room_DAO roomServ = new Room_DAO();
 		roomServ.deleteRoom(request.getParameter("id"));
 		roomServ.closeEntityManager();
-		return "redirect:listRoomByLevel.do?id="+levelKey;
+		return "redirect:listRoom.do?id="+levelKey;
 	}
 	
 	//when you view room in level student  (getkey level to see room)
-	@RequestMapping("/listRoomByLevel")
-	public ModelAndView listRoomByLevel(HttpServletRequest request) {
+	@RequestMapping("/listRoom")
+	public ModelAndView listRoom(HttpServletRequest request) {
 		Room_DAO roomServ = new Room_DAO();
 		String key = request.getParameter("id");
 		request.getSession().setAttribute("levelKey", key);
-		ModelAndView mv = new ModelAndView("listRoomByLevel.jsp");
+		ModelAndView mv = new ModelAndView("listRoom.jsp");
 		List<Room_Information> roomList;
 		try {
 			roomList = roomServ.getRoomByLevel(key);

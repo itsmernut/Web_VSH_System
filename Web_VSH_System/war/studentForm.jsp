@@ -6,17 +6,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Add New Teacher</title>
+<title>Teacher Information</title>
 </head>
 <body>
 
-	<form:form method="post" action="saveTeacher.do" commandName="teacher">
+	<form:form method="post" action="saveStudent.do" commandName="student">
 		<input type="hidden" name="keyString" value="${keyString }"><br />
 		
-		Teacher ID: <form:input path="teacherId" /><br />
+		Student ID: <form:input path="studentId" /><br />
 		First Name: <form:input path="firstName" /><br />
 		Last Name: <form:input path="lastName" /><br />
-		Classroom: <form:input path="classroom" /><br />
 		E-mail: <form:input path="email" /><br />
 		Password: <form:input path="password" /><br />
 		

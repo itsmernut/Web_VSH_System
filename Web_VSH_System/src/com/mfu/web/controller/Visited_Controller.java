@@ -102,7 +102,7 @@ public class Visited_Controller {
 			visitedServ.insertVisited(visited);
 		}
 		visitedServ.closeEntityManager();
-		return "redirect:getStudentProfile.do?id=" + key;
+		return "redirect:studentProfile.do?id=" + key;
 	}
 
 	@RequestMapping("/listVisiteds")

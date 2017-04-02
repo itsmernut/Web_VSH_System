@@ -21,9 +21,16 @@ public class Teacher_Information {
 	private String lastName;
 	private String email;
 	private String password;
+	private String classroom;
 	private String phone;
 	private String photo;
 	
+	public String getClassroom() {
+		return classroom;
+	}
+	public void setClassroom(String classroom) {
+		this.classroom = classroom;
+	}
 	public Key getKey() {
 		return key;
 	}

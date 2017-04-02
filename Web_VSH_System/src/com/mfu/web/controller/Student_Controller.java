@@ -16,20 +16,20 @@ import com.mfu.entity.Student_Information;
 @Controller
 public class Student_Controller {
 
-	@RequestMapping("/listStudent")
-	public ModelAndView listStudent(HttpServletRequest request) {
-		ModelAndView mv = new ModelAndView("listStudent.jsp");
-		List<Student_Information> studentList;
-		Student_DAO studentServ = new Student_DAO();
-		try {
-			studentList = studentServ.getAllStudents();
-			mv.addObject("studentList", studentList);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		studentServ.closeEntityManager();
-		return mv;
-	}
+//	@RequestMapping("/listStudent")
+//	public ModelAndView listStudent(HttpServletRequest request) {
+//		ModelAndView mv = new ModelAndView("listStudent.jsp");
+//		List<Student_Information> studentList;
+//		Student_DAO studentServ = new Student_DAO();
+//		try {
+//			studentList = studentServ.getAllStudents();
+//			mv.addObject("studentList", studentList);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		studentServ.closeEntityManager();
+//		return mv;
+//	}
 	
 	//when you add new Student
 	@RequestMapping("/newStudent")
@@ -55,7 +55,7 @@ public class Student_Controller {
 			e.printStackTrace();
 		}
 		studentServ.closeEntityManager();
-		return "redirect:getStudentByRoom.do?id="+roomKey;
+		return "redirect:listStudent.do?id="+roomKey;
 	}
 	@RequestMapping("/editStudent")
 	public ModelAndView editStudent(HttpServletRequest request) {
@@ -79,16 +79,16 @@ public class Student_Controller {
 		Student_DAO studentServ = new Student_DAO();
 		studentServ.deleteStudent(request.getParameter("id"));
 		studentServ.closeEntityManager();
-		return "redirect:getStudentByRoom.do?id="+roomKey;
+		return "redirect:listStudent.do?id="+roomKey;
 	}
 	
 	//when you view student in student  (getkeyroom to see student)
-	@RequestMapping("/getStudentByRoom")
-	public ModelAndView getStudentByRoom(HttpServletRequest request) {
+	@RequestMapping("/listStudent")
+	public ModelAndView listStudent(HttpServletRequest request) {
 		Student_DAO studentServ = new Student_DAO();
 		String key = request.getParameter("id");
 		request.getSession().setAttribute("roomKey", key);
-		ModelAndView mv = new ModelAndView("getStudentByRoom.jsp");
+		ModelAndView mv = new ModelAndView("listStudent.jsp");
 		List<Student_Information> studentList;
 		try {
 			studentList = studentServ.getStudentByRoom(key);
@@ -100,11 +100,11 @@ public class Student_Controller {
 		return mv;
 	}
 	//when you view profile student   (getkey student)
-	@RequestMapping("/getStudentProfile")
-	public ModelAndView getStudentProfile(HttpServletRequest request) {
+	@RequestMapping("/studentProfile")
+	public ModelAndView studentProfile(HttpServletRequest request) {
 		Student_DAO studentServ = new Student_DAO();
 		String key = request.getParameter("id");
-		ModelAndView mv = new ModelAndView("getStudentProfile.jsp");
+		ModelAndView mv = new ModelAndView("studentProfile.jsp");
 		List<Student_Information> studentList;
 		try {
 			studentList = studentServ.getStudentByKey(key);
