@@ -11,7 +11,14 @@
 	<table border="1">
 		<c:forEach items="${studentList}" var="student">
 			<tr>
-				<td><input type="checkbox" checked></td>
+				<c:choose>
+					<c:when test="${student.visited == true}">
+						<td><input type="checkbox" checked></td>
+					</c:when>
+					<c:otherwise>
+						<td><input type="checkbox" ></td>
+					</c:otherwise>
+				</c:choose>
 				<td>${student.studentId}</td>
 				<td>${student.firstName}</td>
 				<td>${student.lastName}</td>

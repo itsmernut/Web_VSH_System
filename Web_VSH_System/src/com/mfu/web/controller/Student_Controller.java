@@ -124,6 +124,7 @@ public class Student_Controller {
 	public ModelAndView studentProfile(HttpServletRequest request) {
 		Student_DAO studentServ = new Student_DAO();
 		String key = request.getParameter("id");
+		request.getSession().setAttribute("studentKey", key);
 		ModelAndView mv = new ModelAndView("studentProfile.jsp");
 		List<Student_Information> studentList;
 		try {
@@ -141,6 +142,7 @@ public class Student_Controller {
 	public ModelAndView studentProfileStu(HttpServletRequest request) {
 		Student_DAO studentServ = new Student_DAO();
 		String key = request.getParameter("id");
+		request.getSession().setAttribute("studentKey", key);
 		ModelAndView mv = new ModelAndView("studentProfileStu.jsp");
 		List<Student_Information> studentList;
 		try {
@@ -153,18 +155,33 @@ public class Student_Controller {
 		return mv;
 	}
 
-//	@RequestMapping("/checkStudent")
-//	public String checkStudent(HttpServletRequest request) {
-//		String studentKey = (String) request.getSession().getAttribute("studentKey");
-//		Student_DAO studentServ = new Student_DAO();
-//		Student_Information student = studentServ.findStudentByKey(request.getParameter("id"));
-//		if (student.isVisited()) {
-//			student.setVisited(false);
-//		} else {
-//			student.setVisited(true);
-//		}
-//		studentServ.updateStudent(student);
-//		studentServ.closeEntityManager();
-//		return "redirect:studentProfile.do?id=" + studentKey;
-//	}
+	@RequestMapping("/checkStudent")
+	public String checkStudent(HttpServletRequest request) {
+		String studentKey = (String) request.getSession().getAttribute("studentKey");
+		Student_DAO studentServ = new Student_DAO();
+		Student_Information student = studentServ.findStudentByKey(request.getParameter("id"));
+		if (student.isVisited()) {
+			student.setVisited(false);
+		} else {
+			student.setVisited(true);
+		}
+		studentServ.updateStudent(student);
+		studentServ.closeEntityManager();
+		return "redirect:studentProfile.do?id=" + studentKey;
+	}
+	
+	@RequestMapping("/checkStudentStu")
+	public String checkStudentStu(HttpServletRequest request) {
+		String studentKey = (String) request.getSession().getAttribute("studentKey");
+		Student_DAO studentServ = new Student_DAO();
+		Student_Information student = studentServ.findStudentByKey(request.getParameter("id"));
+		if (student.isVisited()) {
+			student.setVisited(false);
+		} else {
+			student.setVisited(true);
+		}
+		studentServ.updateStudent(student);
+		studentServ.closeEntityManager();
+		return "redirect:studentProfileStu.do?id=" + studentKey;
+	}
 }
