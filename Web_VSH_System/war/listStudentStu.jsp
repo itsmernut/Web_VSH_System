@@ -11,26 +11,16 @@
 	<table border="1">
 		<c:forEach items="${studentList}" var="student">
 			<tr>
-				<c:choose>
-					<c:when test="${student.visited == true}">
-						<td><input type="checkbox" checked></td>
-					</c:when>
-					<c:otherwise>
-						<td><input type="checkbox" ></td>
-					</c:otherwise>
-				</c:choose>
+				<td><input type="checkbox" checked></td>
 				<td>${student.studentId}</td>
 				<td>${student.firstName}</td>
 				<td>${student.lastName}</td>
 				<td>${student.email}</td>
 				
-				<td><a href="editStudent.do?id=${student.keyString}">Edit</a></td>
-				<td><a href="deleteStudent.do?id=${student.keyString}">Remove</a></td>
-				<td><a href="studentProfile.do?id=${student.keyString}">View Profile</a></td>
+				<td><a href="studentProfileStu.do?id=${student.keyString}">View Profile</a></td>
 			
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="newStudent.do">Add New Student</a>
 </body>
 </html>

@@ -104,4 +104,20 @@ public class Room_Controller {
 		roomServ.closeEntityManager();
 		return mv;
 	}
+	
+	@RequestMapping("/listRoomStu")
+	public ModelAndView listRoomStu(HttpServletRequest request) {
+		Room_DAO roomServ = new Room_DAO();
+		String key = request.getParameter("id");
+		ModelAndView mv = new ModelAndView("listRoomStu.jsp");
+		List<Room_Information> roomList;
+		try {
+			roomList = roomServ.getRoomByLevel(key);
+			mv.addObject("roomList", roomList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		roomServ.closeEntityManager();
+		return mv;
+	}
 }

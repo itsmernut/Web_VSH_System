@@ -8,9 +8,8 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import com.google.appengine.api.datastore.KeyFactory;
-import com.mfu.entity.User_Information;
+import com.mfu.entity.Location_Information;
 import com.mfu.entity.Parent_Information;
-import com.mfu.entity.Room_Information;
 
 public class Parent_DAO {
 
@@ -69,5 +68,17 @@ public class Parent_DAO {
 	public void closeEntityManager() {
 		if (emparent != null)
 			emparent.close();
+	}
+	
+	public List<Parent_Information> getParentByStudent(String key) {
+		List<Parent_Information> res = null;
+		try {
+			Query parent = emparent.createQuery("select parent from Parent_Information parent where parent.studentId = :key")
+			.setParameter("key", key);
+			 res = parent.getResultList();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return res;
 	}
 }

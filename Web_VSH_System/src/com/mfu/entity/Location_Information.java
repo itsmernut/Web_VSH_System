@@ -9,45 +9,42 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.api.datastore.KeyFactory;
 
 @Entity
-public class User_Information {
+public class Location_Information {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Key key;
-	private String user;
-	private String student;
-	private String teacher;
+	private String studentId;
+	private String xpoint;
+	private String ypoint;
 	
-	
-	public String getStudent() {
-		return student;
-	}
-	public void setStudent(String student) {
-		this.student = student;
-	}
-	public String getTeacher() {
-		return teacher;
-	}
-	public void setTeacher(String teacher) {
-		this.teacher = teacher;
-	}
 	public Key getKey() {
 		return key;
 	}
 	public void setKey(Key key) {
 		this.key = key;
 	}
-	public String getUser() {
-		return user;
+	public String getStudentId() {
+		return studentId;
 	}
-	public void setUser(String user) {
-		this.user = user;
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
-	
+	public String getXpoint() {
+		return xpoint;
+	}
+	public void setXpoint(String xpoint) {
+		this.xpoint = xpoint;
+	}
+	public String getYpoint() {
+		return ypoint;
+	}
+	public void setYpoint(String ypoint) {
+		this.ypoint = ypoint;
+	}
 	public String getKeyString() {
 		return KeyFactory.keyToString(key);
 	}
-
 	public void setKeyString(String keyString) {
 		key = KeyFactory.stringToKey(keyString);
 	}

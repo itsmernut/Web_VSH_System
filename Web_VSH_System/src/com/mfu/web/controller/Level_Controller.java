@@ -86,4 +86,19 @@ public class Level_Controller {
 		levelServ.closeEntityManager();
 		return "redirect:listLevel.do";
 	}
+	
+	@RequestMapping("/listLevelStu")
+	public ModelAndView listLevelStu(HttpServletRequest request) {
+		ModelAndView mv = new ModelAndView("listLevelStu.jsp");
+		List<Level_Information> levelList;
+		Level_DAO levelServ = new Level_DAO();
+		try {
+			levelList = levelServ.getAllLevels();
+			mv.addObject("levelList", levelList);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		levelServ.closeEntityManager();
+		return mv;
+	}
 }

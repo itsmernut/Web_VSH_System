@@ -34,8 +34,8 @@
 				
 				<td><a href="checkStudent.do?id=${student.keyString}">Check Student</a></td>
 				<td><a href="checkVisited.do?id=${student.keyString}">Record Time</a></td>
-				<td><a href="listLocation.do?id=${student.keyString}">View Location</a></td>
-				<td><a href="listParent.do?id=${student.keyString}">View Parent</a></td>
+				<td><a href="listLocationStu.do?id=${student.keyString}">View Location</a></td>
+				<td><a href="listParentStu.do?id=${student.keyString}">View Parent</a></td>
 			</tr>
 		</c:forEach>
 	</table>
